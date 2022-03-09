@@ -28,18 +28,8 @@ class Level:
                 if self.tiles[y][x] == 'X':
                     bg.blit(brick, (x * TILE_SIZE, y * TILE_SIZE))
         return bg
-        
-class Pencil:
-    def __init__(self, length, color, has_eraser, is_sharp):
-        self.length = length
-        self.color = color
-        self.has_eraser = has_eraser
-        self.is_sharp = is_sharp
-    
-    def write(self, text):
-        print(text, 'written with a', self.length, 'long pencil')
-        
-        
+
+
         
         
         
