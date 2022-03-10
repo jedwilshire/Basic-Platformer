@@ -5,24 +5,24 @@ brick = pygame.image.load(BRICK)
 class Level:
     def __init__(self):
         self.tiles = []
-        with open('level1.txt') as f:
+        with open(LEVEL1) as f:
             for line in f:
                 self.tiles.append(line.strip())
         self.width = len(self.tiles[0]) * TILE_SIZE
         self.height = len(self.tiles) * TILE_SIZE
-    
+
     """
     x and y are pixel locations in level
     returns True if in a wall
     """
     def get_in_wall(self, x, y):
-        tile_x = x // TILE_SIZE
-        tile_y = y // TILE_SIZE
+        tile_x = int(x) // TILE_SIZE
+        tile_y = int(y) // TILE_SIZE
         return self.tiles[tile_y][tile_x] == 'X'
-    
+
     def draw_background(self):
         bg = pygame.Surface((self.width, self.height))
-        bg.fill(LIGHT_BLUE)
+        bg.fill(SMOKEY_GREEN)
         for y in range(len(self.tiles)):
             for x in range(len(self.tiles[y])):
                 if self.tiles[y][x] == 'X':
@@ -30,8 +30,7 @@ class Level:
         return bg
 
 
-        
-        
-        
-        
-    
+
+
+
+
